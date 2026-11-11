@@ -1,6 +1,5 @@
 /* =====================================================================
-   Elsy Lagunas · Psicóloga y Terapeuta — script.js
-   Concepto: "El árbol que escucha".
+   Translate · Instituto de idiomas, artes y salud mental — script.js
 
    Principios:
    · Mejora progresiva: sin JavaScript la página se lee completa (el estado
@@ -18,8 +17,8 @@
      CONFIGURACIÓN — único lugar donde vive el número de WhatsApp
      (lada de México 52 + 10 dígitos). Dejar '' para ocultar WhatsApp.
      --------------------------------------------------------------- */
-  const WHATSAPP = '522721345027';
-  const MENSAJE_BASE = 'Hola Elsy, me gustaría agendar una cita.';
+  const WHATSAPP = '522722046524';
+  const MENSAJE_BASE = 'Hola, me gustaría recibir informes de los servicios de Translate.';
 
   /* ---------------------------------------------------------------
      Utilidades
@@ -176,7 +175,7 @@
       if (quien.length < 2) {
         if (campo) campo.classList.add('invalido');
         if (nombre) { nombre.setAttribute('aria-invalid', 'true'); nombre.focus(); }
-        if (error) error.textContent = 'Escribe tu nombre para que Elsy sepa cómo llamarte.';
+        if (error) error.textContent = 'Escribe tu nombre para saber cómo llamarte.';
         return;
       }
       limpiarError();
@@ -187,9 +186,9 @@
       const extraEl = $('#f-mensaje');
       const extra = extraEl ? extraEl.value.trim() : '';
 
-      const partes = [`Hola Elsy, soy ${quien}. Me gustaría agendar una cita.`];
-      if (modalidad) partes.push(`Prefiero sesión ${modalidad}.`);
-      if (motivos.length) partes.push(`Me gustaría trabajar: ${lista(motivos)}.`);
+      const partes = [`Hola, soy ${quien}. Me gustaría recibir informes de Translate.`];
+      if (modalidad) partes.push(`Prefiero modalidad ${modalidad}.`);
+      if (motivos.length) partes.push(`Me interesa: ${lista(motivos)}.`);
       if (extra) partes.push(extra);
       const url = urlWA(partes.join('\n'));
 
@@ -943,15 +942,15 @@
 
   /* --- Motivos: chips elegibles que preparan el mensaje y el formulario --- */
   const MOTIVOS = {
-    ansiedad: { nombre: 'ansiedad', msg: 'Cuando la mente no se detiene, un espacio de escucha ayuda a ponerle nombre a lo que sientes y a encontrar calma. No tienes que sostenerlo solo.' },
-    depresion: { nombre: 'depresión', msg: 'Cuando todo pesa más de lo normal, pedir apoyo es un acto de valentía. Aquí puedes ir a tu propio ritmo, sin prisa y sin juicios.' },
-    duelo: { nombre: 'duelo', msg: 'Despedirte de alguien o de algo duele. Aquí hay espacio para tu tristeza, con respeto y con tiempo.' },
-    relaciones: { nombre: 'relaciones', msg: 'Pareja, familia o amistades: entender cómo te vinculas es parte de cuidarte. También hay terapia de pareja y terapia familiar.' },
-    cambios: { nombre: 'procesos de cambio', msg: 'Hasta un cambio deseado remueve todo por dentro. Acompañarte en el proceso hace que cada paso se sienta más firme.' },
-    bienestar: { nombre: 'bienestar emocional', msg: 'No hace falta estar mal para cuidarte. Tu bienestar emocional merece atención hoy.' }
+    idiomas: { nombre: 'idiomas', msg: 'Inglés, italiano, francés o alemán: empezamos con un examen diagnóstico para ubicarte en el nivel más adecuado y formar grupos del mismo nivel.' },
+    traduccion: { nombre: 'traducción e interpretación', msg: 'Contamos con servicios de traducción e interpretación profesional.' },
+    asesorias: { nombre: 'asesorías escolares', msg: 'Asesorías de preescolar a universidad: taller de tareas, reafirmación de contenidos, lecto-escritura y más.' },
+    danza: { nombre: 'danza', msg: 'Belly dance, danza árabe, egipcia, persa y africana, sexy dance chair y pole dance. Las clases se imparten a partir de los 5 años de edad.' },
+    yoga: { nombre: 'yoga', msg: 'Clases de yoga con horarios flexibles, de lunes a domingo.' },
+    psicologia: { nombre: 'psicología', msg: 'Psicoterapia individual, de pareja y familiar, presencial o en línea, únicamente con cita previa.' }
   };
-  const MENSAJE_VACIO = 'Cuando elijas algo, aquí aparecerá un mensaje pensado para ti.';
-  const MENSAJE_VARIOS = 'Son varias cosas a la vez, y eso también pasa. No tienes que ordenarlas tú solo: cuéntale a Elsy lo que sientas y juntos deciden por dónde empezar.';
+  const MENSAJE_VACIO = 'Cuando elijas algo, aquí aparecerá información sobre ese servicio.';
+  const MENSAJE_VARIOS = 'Puedes combinar varios servicios. Escríbenos por WhatsApp y te damos informes de cada uno.';
 
   function iniciarMotivos() {
     const chips = $$('.chip[data-motivo]');
@@ -977,8 +976,8 @@
         temporizador = setTimeout(() => { mensaje.textContent = texto; mensaje.classList.remove('cambia'); }, reduce ? 0 : 200);
       }
       if (cta) {
-        const base = 'Hola Elsy, me gustaría agendar una cita para platicar.';
-        const msg = claves.length ? `${base} Lo que hoy me pesa: ${lista(claves.map((k) => MOTIVOS[k].nombre))}.` : base;
+        const base = 'Hola, me gustaría recibir informes de los servicios de Translate.';
+        const msg = claves.length ? `${base} Me interesa: ${lista(claves.map((k) => MOTIVOS[k].nombre))}.` : base;
         cta.dataset.waMsg = msg;
         if (WHATSAPP) cta.href = urlWA(msg);
       }
@@ -1069,7 +1068,7 @@
      ================================================================= */
   const seguro = (fn, valor) => {
     try { return fn(); } catch (err) {
-      if (window.console) console.warn('[Elsy Lagunas] módulo omitido:', err);
+      if (window.console) console.warn('[Translate] módulo omitido:', err);
       return valor;
     }
   };

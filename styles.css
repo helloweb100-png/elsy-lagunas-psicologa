@@ -1,6 +1,6 @@
 /* =====================================================================
-   Elsy Lagunas · Psicóloga y Terapeuta — Hoja de estilos
-   Concepto: "El árbol que escucha". Crema cálida + verdes del logo.
+   Translate · Instituto de idiomas, artes y salud mental — Hoja de estilos
+   Crema cálida + verdes (paleta del sitio original, sin cambios).
    Mobile first: base = 390 px; luego 640, 900 y 1180 px.
    ===================================================================== */
 
@@ -831,4 +831,82 @@ a.contacto__valor:hover { color: var(--miel); text-decoration-color: var(--miel)
   .portal__texto { opacity: 1; transform: none; }
   .srv { position: relative; top: auto; margin-bottom: 1.4rem; }
   .srv__in { transform: none; }
+}
+
+/* =====================================================================
+   TRANSLATE — piezas nuevas (identidad del instituto y sus 3 áreas)
+   Solo añade: el resto del diseño se conserva tal cual.
+   ===================================================================== */
+
+/* --- Cargador: la marca escrita en el medallón --- */
+.cargador__marca {
+  width: 132px; height: 132px; border-radius: 50%; display: grid; place-items: center;
+  background: #FDF6EA; color: var(--teal-800);
+  font: 600 .84rem/1 var(--f-display); letter-spacing: .2em; text-indent: .2em; text-transform: uppercase;
+  box-shadow: 0 0 0 7px rgba(251, 246, 236, .08), 0 24px 60px rgba(0, 0, 0, .45);
+  animation: latido 2.4s ease-in-out infinite;
+}
+
+/* --- Hero: medallón con el logotipo escrito (sin foto) --- */
+.medallon {
+  position: relative; aspect-ratio: 450 / 562; border-radius: 42% 6% 42% 6%; overflow: hidden;
+  display: grid; align-content: center; justify-items: center; gap: 1rem; padding: 2rem 1.6rem; text-align: center;
+  color: var(--crema); box-shadow: var(--sombra-m);
+  background: radial-gradient(120% 90% at 50% 18%, var(--teal-700) 0%, var(--teal-900) 62%, var(--teal-950) 100%);
+}
+.medallon__marca { font: 600 clamp(1.3rem, 6.6vw, 2.15rem)/1 var(--f-display); letter-spacing: .2em; text-indent: .2em; text-transform: uppercase; }
+.medallon__linea { width: 56px; height: 2px; border-radius: 2px; background: var(--miel); }
+.medallon__lema { font: italic 400 clamp(.92rem, 3.4vw, 1.02rem)/1.5 var(--f-display); color: var(--menta-200); max-width: 15.5rem; }
+.chip-flota--2 { top: auto; bottom: 14%; }
+.medallon__lugar { font: 700 .66rem/1.3 var(--f-texto); letter-spacing: .2em; text-transform: uppercase; color: rgba(251, 246, 236, .7); }
+
+/* --- Manifiesto: el "+" de "más de 20 años" --- */
+.datos__num--mas::before { content: "+"; }
+
+/* --- Tarjetas de servicio: lista de lo que incluye cada área --- */
+.srv__items { display: flex; flex-wrap: wrap; gap: .4rem .45rem; margin: .3rem 0 .2rem; }
+.srv__items li { padding: .34rem .78rem; border-radius: 999px; font: 600 .78rem/1.25 var(--f-texto); color: var(--teal-800); background: rgba(255, 255, 255, .62); border: 1px solid var(--linea); }
+.srv--1 .srv__items li { background: var(--menta-100); }
+.srv--4 .srv__items li { color: var(--crema); background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .22); }
+
+/* --- Idiomas: detalle del área 1 --- */
+.idiomas { position: relative; padding: var(--sec) 0; background: var(--lienzo); }
+.idiomas__grid { display: grid; gap: 2.8rem; align-items: start; }
+.modalidades--3 { grid-template-columns: 1fr; margin: 1.8rem 0 1.6rem; max-width: none; }
+.idiomas__subtitulo { font: 500 clamp(1.3rem, 5vw, 1.6rem)/1.2 var(--f-display); letter-spacing: -.01em; margin-bottom: 1rem; }
+.niveles { display: grid; gap: .7rem; }
+.nivel { display: flex; align-items: center; gap: 1rem; padding: .95rem 1.1rem; border-radius: var(--r-m); background: var(--crema); border: 1px solid var(--linea); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.nivel:hover { transform: translateX(4px); box-shadow: var(--sombra-s); }
+.nivel__num { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font: 600 1rem/1 var(--f-display); color: #fff; background: linear-gradient(135deg, var(--teal-700), var(--teal)); }
+.nivel strong { font: 600 1.18rem/1.2 var(--f-display); }
+.nivel__horas { margin-left: auto; font: 700 .7rem/1 var(--f-texto); letter-spacing: .12em; text-transform: uppercase; color: var(--teal-700); white-space: nowrap; }
+.idiomas__nota { margin-top: 1rem; font-size: .92rem; color: var(--gris); line-height: 1.5; }
+.idiomas__extras { margin: 3rem 0 0; }
+
+/* --- Salud mental: acciones bajo el texto de Elsy --- */
+.elsy__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+.elsy__nota { margin-top: 1.1rem; font-size: .88rem; color: var(--gris); }
+
+/* --- El instituto --- */
+.instituto { position: relative; padding: var(--sec) 0 calc(var(--sec) + 2.4rem); background: var(--crema-2); }
+.instituto__grid { display: grid; gap: 2.8rem; align-items: start; }
+.perfil { padding: 1.8rem 1.5rem; border-radius: var(--r-l); background: var(--lienzo); border: 1px solid var(--linea); box-shadow: var(--sombra-m); }
+.perfil h3 { font: 500 clamp(1.3rem, 5vw, 1.6rem)/1.2 var(--f-display); letter-spacing: -.01em; margin-bottom: 1.2rem; }
+.perfil li { position: relative; padding-left: 1.7rem; margin-bottom: .75rem; color: var(--gris); line-height: 1.5; }
+.perfil li:last-child { margin-bottom: 0; }
+.perfil li::before { content: ""; position: absolute; left: 0; top: .42em; width: 10px; height: 17px; border-radius: 100% 0 100% 0; background: linear-gradient(160deg, var(--hoja), var(--teal)); }
+
+/* --- Pie: la marca escrita --- */
+.pie__marca .pie__nombre { font: normal 600 1.9rem/1.1 var(--f-display); letter-spacing: .18em; text-transform: uppercase; color: var(--crema); max-width: none; margin-bottom: .9rem; }
+.pie__marca .pie__nombre + p { font-size: 1.05rem; }
+
+@media (min-width: 640px) {
+  .modalidades--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .idiomas__grid { grid-template-columns: 1.05fr .95fr; gap: clamp(2.5rem, 6vw, 5.5rem); }
+  .idiomas__extras { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+  .instituto__grid { grid-template-columns: 1.1fr .9fr; gap: clamp(2.5rem, 6vw, 5.5rem); }
+  .perfil { position: sticky; top: calc(var(--cab) + 2rem); padding: 2.2rem 2rem; }
 }

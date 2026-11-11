@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Translate">
+  <rect width="64" height="64" rx="16" fill="#0F8B82"/>
+  <rect x="15" y="15" width="34" height="8" rx="2.500" fill="#FBF6EC"/>
+  <rect x="28" y="15" width="8" height="34" rx="2.500" fill="#FBF6EC"/>
+</svg>
